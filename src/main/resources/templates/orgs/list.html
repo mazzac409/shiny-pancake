@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Users</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<h1>Org List</h1>
+
+<table >
+    <tr>
+        <td>Name</td>
+        <td>City</td>
+        <td>Org Count</td>
+    </tr>
+    <tr th:each="org : ${orgs}">
+        <td th:text="${org.name}">a</td>
+        <td th:text="${org.city}">c</td>
+        <td th:text="${org.getUsers().size()}"></td>
+    </tr>
+</table>
+</body>
+</html>
